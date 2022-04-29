@@ -1,7 +1,6 @@
 import math
 from functools import lru_cache
 
-@lru_cache(maxsize=50000)
 def first_primes(N):
 	limit = int(math.sqrt(N))
 	F = {x: True for x in range(2, N+1)}
@@ -13,11 +12,12 @@ def first_primes(N):
 			F[f*i] = False
 	return [f for f, d in F.items() if d]
 
+primes = first_primes(100000)
+
 @lru_cache(maxsize=50000)
 def factorisation(N):
 	limit = int(math.sqrt(N))
 
-	primes = first_primes(100000)
 	result = {1, N}
 
 	for prime in primes:

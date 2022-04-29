@@ -45,8 +45,7 @@ def solution(P, S):
 
 			if not car.people:
 				emptied += 1
-
-
+				
 	return len(cars) - emptied
 
 print(solution([3,1],[4,1]))
